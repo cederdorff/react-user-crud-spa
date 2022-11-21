@@ -25,7 +25,7 @@ export default function UpdatePage() {
     async function updateUser(event) {
         event.preventDefault();
 
-        const newUser = {
+        const userToUpdate = {
             // key/name: value from state
             name: name,
             title: title,
@@ -35,7 +35,7 @@ export default function UpdatePage() {
 
         const response = await fetch(url, {
             method: "PUT",
-            body: JSON.stringify(newUser)
+            body: JSON.stringify(userToUpdate)
         });
         if (response.ok) {
             navigate("/");
