@@ -32,7 +32,7 @@ export default function UserPage() {
     }
 
     function showUpdate() {
-        console.log("Show Update user");
+        navigate(`/update/${params.id}`);
     }
 
     return (
