@@ -31,6 +31,10 @@ export default function UserPage() {
         }
     }
 
+    function showUpdate() {
+        console.log("Show Update user");
+    }
+
     return (
         <section className="page">
             <article className="user-detail">
@@ -41,6 +45,7 @@ export default function UserPage() {
                     <p>
                         <a href={`mailto: ${user.mail}`}>{user.mail}</a> | <a href={`tel: ${user.phone}`}>{user.phone}</a>
                     </p>
+                    <button onClick={showUpdate}>Update user</button>
                     <button className="btn-outline" onClick={showDeleteDialog}>
                         Delete user
                     </button>
