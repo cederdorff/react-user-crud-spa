@@ -11,8 +11,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/create" element={<CreatePage />} />
-                <Route path="users/:id" element={<UserPage />} />
-                <Route path="update/:id" element={<UpdatePage />} />
+                <Route path="/users/:id" element={<UserPage />} />
+                <Route path="/update/:id" element={<UpdatePage />} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </main>
