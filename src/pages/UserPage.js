@@ -17,6 +17,13 @@ export default function UserPage() {
         getUser();
     }, [url]); // <--- "[]" VERY IMPORTANT!!!
 
+    function showDeleteDialog() {
+        const shouldDelete = window.confirm(`Do you want to delete "${user.name}"?`);
+        if (shouldDelete) {
+            deleteUser();
+        }
+    }
+
     async function deleteUser() {
         const response = await fetch(url, { method: "DELETE" });
 
@@ -35,7 +42,7 @@ export default function UserPage() {
                     <p>
                         <a href={`mailto: ${user.mail}`}>{user.mail}</a> | <a href={`tel: ${user.phone}`}>{user.phone}</a>
                     </p>
-                    <button className="btn-outline" onClick={deleteUser}>
+                    <button className="btn-outline" onClick={showDeleteDialog}>
                         Delete user
                     </button>
                 </section>
