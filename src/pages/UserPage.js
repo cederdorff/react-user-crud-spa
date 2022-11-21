@@ -26,7 +26,6 @@ export default function UserPage() {
 
     async function deleteUser() {
         const response = await fetch(url, { method: "DELETE" });
-
         if (response.ok) {
             navigate("/"); // navigate back to home page
         }
